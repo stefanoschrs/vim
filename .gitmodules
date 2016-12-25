@@ -14,3 +14,11 @@
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 	ignore = dirty
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+	ignore = dirty
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+	ignore = dirty
