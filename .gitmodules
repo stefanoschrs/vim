@@ -10,3 +10,7 @@
 	path = bundle/vim-node
 	url = https://github.com/moll/vim-node.git
 	ignore = dirty
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	ignore = dirty

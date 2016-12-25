@@ -14,7 +14,7 @@ cd ~/.vim
 url=$1
 name=$(echo ${url##*/} | sed 's/\.git//')
 
-git submodule add ${url} ${DIR}/bundle/${name}
+git submodule add ${url} bundle/${name}
 
 cat .gitmodules | sed "s/${name}.git/${name}.git\n\tignore = dirty/" > .gitmodules.tmp
 mv .gitmodules.tmp .gitmodules
