@@ -6,6 +6,7 @@ call pathogen#helptags()
 """ General "
 """""""""""""
 syntax enable
+filetype plugin indent on
 
 set encoding=utf-8
 
@@ -16,7 +17,10 @@ set dir-=.
 set dir+=/tmp
 
 """ Indendation
-set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab smarttab
+
+""" Folding
+set foldmethod=indent
 
 """ Line numbers
 nnoremap <C-n> :call NumberTriToggle()<cr>
@@ -73,11 +77,6 @@ endfunc
 ""set background=dark
 ""colorscheme solarized
 "
-"set number
-"set relativenumber
-"
-"
-"filetype plugin indent on
 "
 "" User Mappings
 ":nmap <F2> :set nu!<CR> :set rnu!<CR>
