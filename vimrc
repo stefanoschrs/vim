@@ -8,6 +8,7 @@ call pathogen#helptags()
 syntax enable
 filetype plugin indent on
 
+set t_Co=256
 set encoding=utf-8
 
 """ swap files location
@@ -21,6 +22,8 @@ set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab smarttab
 
 """ Folding
 set foldmethod=indent
+hi Folded ctermbg=none
+hi Folded ctermfg=0
 
 """ Line numbers
 nnoremap <C-n> :call NumberTriToggle()<cr>
