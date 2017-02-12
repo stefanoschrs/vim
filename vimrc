@@ -1,14 +1,17 @@
+"""""""""""""
+""" General "
+"""""""""""""
 call pathogen#infect()
 call pathogen#helptags()
 
 
-"""""""""""""
-""" General "
-"""""""""""""
-syntax enable
+
+
+"""""""""""""""""""
+""" File Settings "
+"""""""""""""""""""
 filetype plugin indent on
 
-set t_Co=256
 set encoding=utf-8
 
 """ swap files location
@@ -16,6 +19,24 @@ set bdir-=.
 set bdir+=/tmp
 set dir-=.
 set dir+=/tmp
+
+
+
+""""""""""""
+""" Editor "
+""""""""""""
+syntax enable
+
+set t_Co=256
+
+""" Trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+""" Line numbers
+nnoremap <C-n> :call NumberTriToggle()<cr>
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set number!
 
 """ Indendation
 set expandtab
@@ -27,10 +48,6 @@ set foldmethod=indent
 hi Folded ctermbg=none
 hi Folded ctermfg=0
 
-""" Line numbers
-nnoremap <C-n> :call NumberTriToggle()<cr>
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set number!
 
 
 """""""""""""
@@ -56,57 +73,30 @@ map <C-\> :NERDTreeToggle<CR>
 """ vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
+
+
+""""""""""""""
+""" Mappings "
+""""""""""""""
+""" Split navigation (terminator style)
+nnoremap <c-w>o <c-w>s
+nnoremap <c-w>e <c-w>v
+
+
+
+
 """""""""""""""
 """ Functions "
 """""""""""""""
 function! NumberTriToggle()
-	if(&relativenumber == 1)
-		set norelativenumber
-	else 
-		if(&number == 1)
-			set nonumber norelativenumber
-		else
-			set number relativenumber
-		endif
-	endif
+  if(&relativenumber == 1)
+    set norelativenumber
+  else 
+    if(&number == 1)
+      set nonumber norelativenumber
+    else
+      set number relativenumber
+    endif
+  endif
 endfunc
 
-
-
-
-
-
-
-
-
-"""OLD"""
-
-""set background=dark
-""colorscheme solarized
-"
-"
-"" User Mappings
-":nmap <F2> :set nu!<CR> :set rnu!<CR>
-"
-"" Split navigation
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
-"
-"
-"" Python PEP8 rules
-""au BufNewFile,BufRead *.py
-""   \ set tabstop=4
-""   \ set softtabstop=4
-""   \ set shiftwidth=4
-""   \ set textwidth=79
-""   \ set expandtab
-""   \ set autoindent
-""   \ set fileformat=uni
-"
-""" Flag Unnecessary Whitespace
-"au BufRead,BufNewFile *.py,*.go,*.js,*.css,*.scss,*.ejs,*.html,*.sh match BadWhitespace /\s\+$/
-"
-"autocmd Filetype tex setl updatetime=1
-"let g:livepreview_previewer = 'open -a Preview'
