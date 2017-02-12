@@ -18,7 +18,9 @@ set dir-=.
 set dir+=/tmp
 
 """ Indendation
-set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab smarttab
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 """ Folding
 set foldmethod=indent
@@ -46,11 +48,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['standard']
 
 """ NERDTree Plugin
 map <C-\> :NERDTreeToggle<CR>
 
+""" vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
 """""""""""""""
 """ Functions "
