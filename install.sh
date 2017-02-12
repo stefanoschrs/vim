@@ -5,10 +5,6 @@ if [[ `whereis git` == "git:" ]]; then
   echo "Unmet dependency: git"
   exit 1
 fi
-if [[ `whereis curl` == "curl:" ]]; then
-  echo "Unmet dependency: curl"
-  exit 1
-fi
 
 ### Main
 
