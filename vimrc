@@ -48,6 +48,12 @@ set foldmethod=indent
 hi Folded ctermbg=none
 hi Folded ctermfg=0
 
+""" Search
+set hlsearch
+
+""" Git conflict highlighting & navigation
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 
 
 """""""""""""
@@ -68,7 +74,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['standard']
 
 """ NERDTree Plugin
-map <C-\> :NERDTreeToggle<CR>
+let NERDTreeHighlightCursorline=1
+map <C-\DTreeHighlightCursorline=1
+
 
 """ vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -82,7 +90,15 @@ let g:javascript_plugin_jsdoc = 1
 nnoremap <c-w>o <c-w>s
 nnoremap <c-w>e <c-w>v
 
+set pastetoggle=<F2>
 
+" Mappings to easily toggle fold levels
+nnoremap z0 :set foldlevel=0<cr>
+nnoremap z1 :set foldlevel=1<cr>
+nnoremap z2 :set foldlevel=2<cr>
+nnoremap z3 :set foldlevel=3<cr>
+nnoremap z4 :set foldlevel=4<cr>
+nnoremap z5 :set foldlevel=5<cr>
 
 
 """""""""""""""
