@@ -6,7 +6,6 @@ call pathogen#helptags()
 
 
 
-
 """""""""""""""""""
 """ File Settings "
 """""""""""""""""""
@@ -75,8 +74,10 @@ let g:syntastic_javascript_checkers = ['standard']
 
 """ NERDTree Plugin
 let NERDTreeHighlightCursorline=1
-map <C-\DTreeHighlightCursorline=1
-
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+map <C-\> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """ vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -86,6 +87,9 @@ let g:javascript_plugin_jsdoc = 1
 """"""""""""""
 """ Mappings "
 """"""""""""""
+""" Remove search highlights
+nnoremap <silent> <C-l> :nohl<CR>:SyntasticToggleMode<CR>:SyntasticToggleMode<CR><C-l>
+
 """ Split navigation (terminator style)
 nnoremap <c-w>o <c-w>s
 nnoremap <c-w>e <c-w>v
