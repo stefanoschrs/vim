@@ -7,7 +7,9 @@ if [[ `whereis git` == "git:" ]]; then
 fi
 
 ### Main
-
-git clone --recursive https://github.com/stefanoschrs/vim ~/.vim
+git clone \
+  --recursive \
+  https://github.com/stefanoschrs/vim \
+  ~/.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc

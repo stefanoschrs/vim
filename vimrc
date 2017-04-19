@@ -55,6 +55,12 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 
 
+"""""""""""""""""""
+""" Custom Syntax "
+"""""""""""""""""""
+autocmd BufRead *.tab set filetype=tab
+
+
 """""""""""""
 """ Plugins "
 """""""""""""
