@@ -1,0 +1,11 @@
+script:
+- rm -rf .git
+- tar -zcvf /tmp/vim.tgz ../vim
+
+deploy:
+  provider: releases
+  api_key:
+    secure: gpXyYjqDoRoXVqMgSvGaaBQxOiqxuIkHzgGFfuzcjkX05Tkg3MrSNaW7ET1ebFZUR8ypP/SYSnlnuhQ6CnxfkNtw2ZpHy1z7Ar0uv6R7+jq3rjOVwYOqpYTukJSjvRtyan8XgKiazmAlWNRzPAZFn9eTdUZia/gz18icPZGmwL1HRQ+JhXdu/i9zT/iyYQ+B2YPHzh+ICv+lIm8e1c6cnyHRReVD1daTAxtsHfPdRZ62Txxhvk8jd6NP5bGcUeuoLtC6M6zaywYKvjlDxKTl7gNgrtYksROjeQGKGRTlYsF1WRA5G1YvyHvxOu/4m2OnqxmEx8SAWc/pcDqgrfPMh0VzP9EcCTWT3oAN0pOtM3P/6djxVrhMGET3UxQCtG7blfDw9ivsWtczWRPFBF/h0ZJ/h/K3PtJia0JEaFk0mZ6fAZPWWNiKBnmm+S6TSgqDFtg5+43SWNqREXTOhsBs+wgxh8z62lKKExfC4HeP1De36re3tX5DP1Jp41+/EhRBQKNE683ke+cca244ebLhJNIPHgRJOgOwC9dnSQQiHNZdSbQ/La+kGsSZwaJd2AwsF8FNVR7RJUyu815metafmVmeeCIAL5RJCWgxdIbNauBzqkkjdRWTwwGihCUhWxDq88LHC8rt9cWGNZIY3qwDR5BDbmDyWUMFa5haafRtAIA=
+  file: "/tmp/vim.tgz"
+  on:
+    repo: stefanoschrs/vim
