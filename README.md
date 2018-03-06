@@ -9,7 +9,3 @@
 ### Extra
 * Custom syntax for **Guitar Tabs**
 <img src="http://oi64.tinypic.com/xeoleq.jpg" alt="Guitar Tab Example" style="width:200px;"/>
-
-### TODO
-* Remove plugin script
-* Generate tar for no-git server deployment
